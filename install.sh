@@ -11,4 +11,4 @@ cd ~/docker-compose/pihole
 
 wget https://raw.githubusercontent.com/wynn-dev/dns-deploy/main/docker-compose.yml
 
-docker-compose up -d
+docker-compose up -d && docker logs dns | grep "random password"
