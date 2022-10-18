@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  dns:
+    container_name: dns
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "40080:80/tcp"
+    volumes:
+      - '/etc/pihole:/etc/pihole'
+      - '/etc/dnsmasq.d:/etc/dnsmasq.d'
+    restart: unless-stopped
